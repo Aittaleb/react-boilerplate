@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-
 module.exports = {
   entry: [
     'script!jquery/dist/jquery.min.js',
@@ -22,8 +21,8 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      Main: 'app/components/Main.jsx',
-      applicationStyles: 'app/styles/app.scss'
+      MainComponent: 'app/components/MainComponent.jsx',
+      applicationStyles : 'app/styles/app.css'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -32,12 +31,12 @@ module.exports = {
       {
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0']
+          presets: ['react', 'es2015']
         },
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map'
+  devtool : 'cheap-module-eval-source-map'
 };
